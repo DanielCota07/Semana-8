@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola Mundo</h1>
+
+    <div id="app">
+        <p>Materia: {{materia}}</p>
+        <p>Semestre: {{semestre}}</p>
+        <p>Carerra: {{carrera}}</p>
+        <hr>
+        <p>
+            <input type="text" v-model="producto" @keyup.enter!="agregarProducto">
+            <button @click="agregarProducto">Agregar</button>
+        </p>
+        <ul v-for="elemento in productos">
+            <li>
+                <input type="number" v-model.number="elemento.cantidad">
+                {{elemento.nombre}} | {{elemento.cantidad}} 
+
+                <button @click="elemento.cantidad++">+</button>
+                <button @click="elemento.cantidad--">-</button>
+                <span v-if="elemento.cantidad <= 0">Sin stock</span>
+            </li>
+        </ul>
+        <h1>Total: {{total}} </h1>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="JS16.js"></script>
+</body>
+</html>
