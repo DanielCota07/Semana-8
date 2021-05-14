@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Fetch Api</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="obtenerUsuarios"> obtener usuarios</button>
+        <ul v-for="usuario in usuarios">
+            <li>
+                 {{usuario.name}} | {{usuario.company.name}}
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <p>Async Await</p>
+    <div id="app2">
+        <button @click="obtenerUsuarios2"> obtener usuarios</button>
+        <ul v-for="usuario2 in usuarios2">
+            <li>
+                {{usuario2.name}} | {{usuario2.company.name}}
+            </li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="JS18.js"></script>
+</body>
+</html>
